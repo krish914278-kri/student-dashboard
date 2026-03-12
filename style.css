@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image:url("../image2.png") ;
+    background-image:url("image2.png") ;
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -239,4 +239,5 @@ border: 2px solid blue;
 .studied{
 background: green;
 color: white;
+
 }
