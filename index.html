@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Productivity Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.png">
+</head>
+
+<body>
+
+<!-- LOGIN SECTION  -->
+<div id="loginSection" class="card">
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Enter Email"><br><br>
+    <input type="password" id="loginPassword" placeholder="Enter Password"><br><br>
+    <button onclick="loginUser()">Login</button>
+
+    <p>Don't have an account?</p>
+    <button onclick="showRegister()">Register</button>
+</div>
+
+
+<!--  REGISTER SECTION -->
+<div id="registerSection" class="card" style="display:none;">
+    <h2>Register</h2>
+    <input type="text" id="registerName" placeholder="Enter Name"><br><br>
+    <input type="email" id="registerEmail" placeholder="Enter Email"><br><br>
+    <input type="password" id="registerPassword" placeholder="Enter Password"><br><br>
+    <button onclick="registerUser()">Register</button>
+    <button onclick="showLogin()">Back to Login</button>
+</div>
+
+
+<!-- DASHBOARD -->
+<div id="dashboardSection" style="display:none;">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h1>Student Productivity Dashboard</h1>
+        <div>
+            <span id="usernameDisplay"></span>
+            <button onclick="toggleDarkMode()">Dark Mode</button>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+
+
+    <!--  TODO  -->
+    <div class="card">
+        <div class="todo-title">📋 TO Do List</div>
+        <input type="text" id="taskInput" placeholder="Enter your task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+
+
+    <!--  ATTENDANCE  -->
+    <div class="card">
+        <h2> 🧮 Attendance Calculator</h2>
+        <input type="number" id="totalClasses" placeholder="Total Classes"><br><br>
+        <input type="number" id="attendedClasses" placeholder="Attended Classes"><br><br>
+        <button onclick="calculateAttendance()">Calculate</button>
+        <p id="attendanceResult"></p>
+    </div>
+
+
+    <!-- COUNTDOWN  -->
+    <div class="card">
+        <h2>⏳ Exam Countdown</h2>
+        <input type="datetime-local" id="examDate">
+        <button onclick="startCountdown()">Start</button>
+        <button onclick="resetCountdown()">Reset</button>
+
+        <div class="countdown-box">
+            <div>
+                <h3 id="days">0</h3>
+                <p>Days</p>
+            </div>
+            <div>
+                <h3 id="hours">0</h3>
+                <p>Hours</p>
+            </div>
+            <div>
+                <h3 id="minutes">0</h3>
+                <p>Minutes</p>
+            </div>
+            <div>
+                <h3 id="seconds">0</h3>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  STUDY TRACKER  -->
+    <div class="card">
+        <h2> 📚 Study Tracker</h2>
+        <button onclick="startStudy()">Start Study</button>
+        <button onclick="stopStudy()">Stop Study</button>
+        <button onclick="resetStudy()">Reset</button>
+        <h3>Total Study Time</h3>
+        <p id="studyTime">0 minutes</p>
+    </div>
+
+
+    <!-- STUDY CALENDER -->
+    <div class="card">
+        <h2> 📅 Study Calendar</h2>
+
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div id="calendar"></div>
+    </div>
+
+</div>
+
+
+<!-- JS FILES -->
+<script src="js/login.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/attendance.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/study.js"></script>
+<script src="js/calendar.js"></script>
+
+</body>
+</html>
